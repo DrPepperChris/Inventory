@@ -29,21 +29,21 @@ Allow for the following API functions:
         
 Interviewer came back with following feedback after initial commit:
        
-1) List the quantity of items per warehouse given a particular model ID – The controller definitely doesn’t have this aggregation method and the Inventory model isn’t really designed for different warehouse per id.
+1) List the quantity of items per warehouse given a particular model ID – The controller definitely doesn’t have this aggregation method and the Inventory model isn’t really designed for different warehouse per id.  **COMPLETE.**
 
-2) List the model name and quantity of items given an optional warehouse identifier of a specified part category GetModelNameAndQtyByPartCat This method sort of fits the bill, but doesn’t have a warehouse param.
+2) List the model name and quantity of items given an optional warehouse identifier of a specified part category GetModelNameAndQtyByPartCat This method sort of fits the bill, but doesn’t have a warehouse param.  **COMPLETE.**
 
-3) Given a model ID, store ID and optional warehouse ID, reserve an item for a particular store (i.e., take it out of available inventory) updateQty – It’s updating the quantity, but the warehouse param isn’t optional and there’s no error response if the quantity is 0.
+3) Given a model ID, store ID and optional warehouse ID, reserve an item for a particular store (i.e., take it out of available inventory) updateQty – It’s updating the quantity, but the warehouse param isn’t optional and there’s no error response if the quantity is 0.  **COMPLETE.**
 
-4) Request an email notification (given an email address) when an item arrives at a store sendEmail - not sure what’s going on here exactly.  This would be difficult to implement without a more complex Inventory model.
+4) Request an email notification (given an email address) when an item arrives at a store sendEmail - not sure what’s going on here exactly.  This would be difficult to implement without a more complex Inventory model.  **COMPLETE.**
 
     
 
-1) List qty by warehouseId. We cannot have an optinal dbKey "WarehousId" Kept the same structure.
+Additional details: 
 
-2) List Item Model by cat w/optinal warehosueId. ![Inventory_PartByCategory](https://user-images.githubusercontent.com/42184732/193462036-ba2baab9-c56e-4531-8641-668dbeeb2ac3.png)
+1) List Item Model by cat w/optinal warehosueId. ![Inventory_PartByCategory](https://user-images.githubusercontent.com/42184732/193462036-ba2baab9-c56e-4531-8641-668dbeeb2ac3.png)
 
-3) Adds error handeling to existing method. ![UpdateOHQty](https://user-images.githubusercontent.com/42184732/193462049-b1262717-3364-4f71-b622-40a79c6136c9.png)
+2) Adds error handeling to existing method. ![UpdateOHQty](https://user-images.githubusercontent.com/42184732/193462049-b1262717-3364-4f71-b622-40a79c6136c9.png)
 
-4) Revamped email notification method. **For this to actually function you need to update it with your SMTP credentials**
+3) Revamped email notification method. **For this to actually function you need to update it with your SMTP credentials**
 

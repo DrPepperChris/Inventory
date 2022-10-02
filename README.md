@@ -39,11 +39,11 @@ Interviewer came back with following feedback after initial commit:
 
     
 
-1) List qty by warehouseId. We cannot have an optinal dbKey "WarehousId" Kept the same structure.![UpdateOHQty](https://user-images.githubusercontent.com/42184732/193462049-b1262717-3364-4f71-b622-40a79c6136c9.png)
+1) List qty by warehouseId. We cannot have an optinal dbKey "WarehousId" Kept the same structure.
 
 2) List Item Model by cat w/optinal warehosueId. ![Inventory_PartByCategory](https://user-images.githubusercontent.com/42184732/193462036-ba2baab9-c56e-4531-8641-668dbeeb2ac3.png)
 
-3) Adds error handeling to existing method. ![Upd_error](https://user-images.githubusercontent.com/42184732/193462020-b114fe24-e68a-4de5-8be7-7a787487d258.png)
+3) Adds error handeling to existing method. ![UpdateOHQty](https://user-images.githubusercontent.com/42184732/193462049-b1262717-3364-4f71-b622-40a79c6136c9.png)
 
 4) Revamped email notification method. **For this to actually function you need to update it with your SMTP credentials**
 

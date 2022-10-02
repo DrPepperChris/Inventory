@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sEybEdQal4eJE1wVQvWH6ceyFMuVuOonAztcJW4apLwPJaVSiDeccSIuC23Wg2r+q+Q/taFfg8d6zyh2PYPTXg==",
+  "dgSpecHash": "D7ttMzg6oHREAY2MOfF6r++d5IdeSCz5lNbrGYnMKP03OeQzSVkz7KRLcNSsYVbbllcWKktIm+4l535AdNCHVQ==",
   "success": true,
-  "projectFilePath": "C:\\work\\source\\repos\\Wando\\InventoryApi\\InventoryApi\\InventoryApi.csproj",
+  "projectFilePath": "C:\\Users\\13143\\Source\\Repos\\Inventory\\InventoryApi\\InventoryApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\13143\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.9\\microsoft.aspnet.webapi.client.5.2.9.nupkg.sha512",
     "C:\\Users\\13143\\.nuget\\packages\\microsoft.aspnet.webapi.core\\5.2.9\\microsoft.aspnet.webapi.core.5.2.9.nupkg.sha512",
@@ -10,7 +10,8 @@
     "C:\\Users\\13143\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\13143\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\13143\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
-    "C:\\Users\\13143\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\13143\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
+    "C:\\Users\\13143\\.nuget\\packages\\microsoft.openapi.readers\\1.4.1\\microsoft.openapi.readers.1.4.1.nupkg.sha512",
     "C:\\Users\\13143\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\13143\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
@@ -31,6 +32,7 @@
     "C:\\Users\\13143\\.nuget\\packages\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\13143\\.nuget\\packages\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\13143\\.nuget\\packages\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
+    "C:\\Users\\13143\\.nuget\\packages\\sharpyaml\\2.1.0\\sharpyaml.2.1.0.nupkg.sha512",
     "C:\\Users\\13143\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\13143\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\13143\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",

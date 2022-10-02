@@ -83,13 +83,26 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.OpenApi/1.2.3": {
+      "Microsoft.OpenApi/1.4.3": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {}
+        }
+      },
+      "Microsoft.OpenApi.Readers/1.4.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.OpenApi": "1.4.2",
+          "SharpYaml": "2.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.OpenApi.Readers.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.OpenApi.Readers.dll": {}
         }
       },
       "Microsoft.Win32.Primitives/4.3.0": {
@@ -371,6 +384,15 @@
             "assetType": "native",
             "rid": "ubuntu.16.10-x64"
           }
+        }
+      },
+      "SharpYaml/2.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/SharpYaml.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SharpYaml.dll": {}
         }
       },
       "Swashbuckle.AspNetCore/6.2.3": {
@@ -1691,21 +1713,32 @@
         "runtime.json"
       ]
     },
-    "Microsoft.OpenApi/1.2.3": {
-      "sha512": "Nug3rO+7Kl5/SBAadzSMAVgqDlfGjJZ0GenQrLywJ84XGKO0uRqkunz5Wyl0SDwcR71bAATXvSdbdzPrYRYKGw==",
+    "Microsoft.OpenApi/1.4.3": {
+      "sha512": "rURwggB+QZYcSVbDr7HSdhw/FELvMlriW10OeOzjPT7pstefMo7IThhtNtDudxbXhW+lj0NfX72Ka5EDsG8x6w==",
       "type": "package",
-      "path": "microsoft.openapi/1.2.3",
+      "path": "microsoft.openapi/1.4.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/net46/Microsoft.OpenApi.dll",
-        "lib/net46/Microsoft.OpenApi.pdb",
-        "lib/net46/Microsoft.OpenApi.xml",
         "lib/netstandard2.0/Microsoft.OpenApi.dll",
         "lib/netstandard2.0/Microsoft.OpenApi.pdb",
         "lib/netstandard2.0/Microsoft.OpenApi.xml",
-        "microsoft.openapi.1.2.3.nupkg.sha512",
+        "microsoft.openapi.1.4.3.nupkg.sha512",
         "microsoft.openapi.nuspec"
+      ]
+    },
+    "Microsoft.OpenApi.Readers/1.4.1": {
+      "sha512": "kBSOR+F0gfYgeX3KJAgLJ1ODapjj6ibf8DGTeiYibqlUBl7mizxkqvuaw6faIPpAMRkgt8tL499JSO2s0fjRgw==",
+      "type": "package",
+      "path": "microsoft.openapi.readers/1.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.OpenApi.Readers.dll",
+        "lib/netstandard2.0/Microsoft.OpenApi.Readers.pdb",
+        "lib/netstandard2.0/Microsoft.OpenApi.xml",
+        "microsoft.openapi.readers.1.4.1.nupkg.sha512",
+        "microsoft.openapi.readers.nuspec"
       ]
     },
     "Microsoft.Win32.Primitives/4.3.0": {
@@ -2023,6 +2056,19 @@
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.nuspec",
         "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so"
+      ]
+    },
+    "SharpYaml/2.1.0": {
+      "sha512": "2jBenJ6QN0mj8G3ohrNO/uNhA92OJYsQFuI5dJ4zM/HauVoC/oJzK1sCVlUaVUpuXpHUa/k1waXVkkBR2luP/w==",
+      "type": "package",
+      "path": "sharpyaml/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/SharpYaml.dll",
+        "lib/netstandard2.0/SharpYaml.xml",
+        "sharpyaml.2.1.0.nupkg.sha512",
+        "sharpyaml.nuspec"
       ]
     },
     "Swashbuckle.AspNetCore/6.2.3": {
@@ -5518,6 +5564,8 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.AspNet.WebApi.Core >= 5.2.9",
+      "Microsoft.OpenApi >= 1.4.3",
+      "Microsoft.OpenApi.Readers >= 1.4.1",
       "Swashbuckle.AspNetCore >= 6.2.3",
       "Swashbuckle.Core >= 5.6.0"
     ]
@@ -5529,11 +5577,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\work\\source\\repos\\Wando\\InventoryApi\\InventoryApi\\InventoryApi.csproj",
+      "projectUniqueName": "C:\\Users\\13143\\Source\\Repos\\Inventory\\InventoryApi\\InventoryApi.csproj",
       "projectName": "InventoryApi",
-      "projectPath": "C:\\work\\source\\repos\\Wando\\InventoryApi\\InventoryApi\\InventoryApi.csproj",
+      "projectPath": "C:\\Users\\13143\\Source\\Repos\\Inventory\\InventoryApi\\InventoryApi.csproj",
       "packagesPath": "C:\\Users\\13143\\.nuget\\packages\\",
-      "outputPath": "C:\\work\\source\\repos\\Wando\\InventoryApi\\InventoryApi\\obj\\",
+      "outputPath": "C:\\Users\\13143\\Source\\Repos\\Inventory\\InventoryApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5568,6 +5616,14 @@
           "Microsoft.AspNet.WebApi.Core": {
             "target": "Package",
             "version": "[5.2.9, )"
+          },
+          "Microsoft.OpenApi": {
+            "target": "Package",
+            "version": "[1.4.3, )"
+          },
+          "Microsoft.OpenApi.Readers": {
+            "target": "Package",
+            "version": "[1.4.1, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\work\\source\\repos\\Wando\\InventoryApi\\InventoryApi\\InventoryApi.csproj": {}
+    "C:\\Users\\13143\\Source\\Repos\\Inventory\\InventoryApi\\InventoryApi.csproj": {}
   },
   "projects": {
-    "C:\\work\\source\\repos\\Wando\\InventoryApi\\InventoryApi\\InventoryApi.csproj": {
+    "C:\\Users\\13143\\Source\\Repos\\Inventory\\InventoryApi\\InventoryApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\work\\source\\repos\\Wando\\InventoryApi\\InventoryApi\\InventoryApi.csproj",
+        "projectUniqueName": "C:\\Users\\13143\\Source\\Repos\\Inventory\\InventoryApi\\InventoryApi.csproj",
         "projectName": "InventoryApi",
-        "projectPath": "C:\\work\\source\\repos\\Wando\\InventoryApi\\InventoryApi\\InventoryApi.csproj",
+        "projectPath": "C:\\Users\\13143\\Source\\Repos\\Inventory\\InventoryApi\\InventoryApi.csproj",
         "packagesPath": "C:\\Users\\13143\\.nuget\\packages\\",
-        "outputPath": "C:\\work\\source\\repos\\Wando\\InventoryApi\\InventoryApi\\obj\\",
+        "outputPath": "C:\\Users\\13143\\Source\\Repos\\Inventory\\InventoryApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -46,6 +46,14 @@
             "Microsoft.AspNet.WebApi.Core": {
               "target": "Package",
               "version": "[5.2.9, )"
+            },
+            "Microsoft.OpenApi": {
+              "target": "Package",
+              "version": "[1.4.3, )"
+            },
+            "Microsoft.OpenApi.Readers": {
+              "target": "Package",
+              "version": "[1.4.1, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

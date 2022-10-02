@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
+using System.Net.Mail;
+using System.Text.Json.Nodes;
 
 namespace InventoryApi.Controllers
 {
@@ -13,73 +15,90 @@ namespace InventoryApi.Controllers
         {
             new Inventory()
                 {
-                  ModelId= 1,WarehouseId=1, Nomenclature = "Air Intake filter", PartCat = 1, IsReorder = false, ModelName = "K&N", Rdr_Lvl=100, On_Hand=200
+                  ModelId= 1,WarehouseId=1, Nomenclature = "Air Intake filter", PartCat = 1, IsReorder = false, ModelName = "K&N", Rdr_Lvl=100, On_Hand=0, StoreId=1, 
                 },
             new Inventory()
                 {
-                  ModelId= 2,WarehouseId=2,Nomenclature = "Valve cover", PartCat = 2, IsReorder = false, ModelName = "Honda", Rdr_Lvl=10, On_Hand=20
+                  ModelId= 2,WarehouseId=2,Nomenclature = "Valve cover", PartCat = 2, IsReorder = false, ModelName = "Honda", Rdr_Lvl=10, On_Hand=20, StoreId=1,
                 },
             new Inventory()
                 {
-                  ModelId= 3,WarehouseId=2,Nomenclature = "Wheel bearing rear drivers", PartCat = 3, IsReorder = false, ModelName = "Honda", Rdr_Lvl=20, On_Hand=30
+                  ModelId= 3,WarehouseId=2,Nomenclature = "Wheel bearing rear drivers", PartCat = 3, IsReorder = false, ModelName = "Honda", Rdr_Lvl=20, On_Hand=30, StoreId=1,
                 },
              new Inventory()
                 {
-                  ModelId= 4, WarehouseId=2,Nomenclature = "Wheel bearing rear passenger", PartCat = 3, IsReorder = false, ModelName = "Ford", Rdr_Lvl=10, On_Hand=20
+                  ModelId= 4, WarehouseId=2,Nomenclature = "Wheel bearing rear passenger", PartCat = 3, IsReorder = false, ModelName = "Ford", Rdr_Lvl=10, On_Hand=20, StoreId=1,
                 },
             new Inventory()
                 {
-                   ModelId= 5,WarehouseId=1,Nomenclature = "Wheel bearing rear drivers", PartCat = 3, IsReorder = false, ModelName = "Ford", Rdr_Lvl=10, On_Hand=20
+                   ModelId= 5,WarehouseId=1,Nomenclature = "Wheel bearing rear drivers", PartCat = 3, IsReorder = false, ModelName = "Ford", Rdr_Lvl=10, On_Hand=20, StoreId=1,
                 },
             new Inventory()
                 {
-                   ModelId= 6,WarehouseId=1,Nomenclature = "TMPS sensor", PartCat = 4, IsReorder = true, ModelName = "Universal", Rdr_Lvl=2000, On_Hand=1000
+                   ModelId= 6,WarehouseId=1,Nomenclature = "TMPS sensor", PartCat = 4, IsReorder = true, ModelName = "Universal", Rdr_Lvl=2000, On_Hand=1000, StoreId=1,
                 },
             new Inventory()
                 {
-                   ModelId= 7,WarehouseId=2,Nomenclature = "5w20 oil 1 qt.", PartCat = 4, IsReorder = true, ModelName = "Universal", Rdr_Lvl=20, On_Hand=100
+                   ModelId= 7,WarehouseId=2,Nomenclature = "5w20 oil 1 qt.", PartCat = 4, IsReorder = true, ModelName = "Universal", Rdr_Lvl=20, On_Hand=100, StoreId=1,
+                },
+
+             new Inventory()
+                {
+                  ModelId= 8,WarehouseId=1, Nomenclature = "Air Intake filter", PartCat = 1, IsReorder = false, ModelName = "K&N", Rdr_Lvl=100, On_Hand=200, StoreId=1,
+                },
+            new Inventory()
+                {
+                  ModelId= 9,WarehouseId=2,Nomenclature = "Valve cover", PartCat = 2, IsReorder = false, ModelName = "Honda", Rdr_Lvl=10, On_Hand=20, StoreId=1,
+                },
+            new Inventory()
+                {
+                  ModelId= 10,WarehouseId=2,Nomenclature = "Wheel bearing rear drivers", PartCat = 3, IsReorder = false, ModelName = "Honda", Rdr_Lvl=20, On_Hand=30, StoreId=1,
+                },
+             new Inventory()
+                {
+                  ModelId= 11, WarehouseId=2,Nomenclature = "Wheel bearing rear passenger", PartCat = 3, IsReorder = false, ModelName = "Ford", Rdr_Lvl=10, On_Hand=20, StoreId=1,
+                },
+            new Inventory()
+                {
+                   ModelId= 12,WarehouseId=1,Nomenclature = "Wheel bearing rear drivers", PartCat = 3, IsReorder = false, ModelName = "Ford", Rdr_Lvl=10, On_Hand=20, StoreId=1,
+                },
+            new Inventory()
+                {
+                   ModelId= 13,WarehouseId=1,Nomenclature = "TMPS sensor", PartCat = 4, IsReorder = true, ModelName = "Sensor corp", Rdr_Lvl=2000, On_Hand=1000, StoreId=1,
+                },
+            new Inventory()
+                {
+                   ModelId= 14,WarehouseId=2,Nomenclature = "5w20 oil 1 qt.", PartCat = 4, IsReorder = true, ModelName = "Oil Co", Rdr_Lvl=20, On_Hand=100, StoreId=1,
                 }
         };
-
+        
         private readonly ILogger<InventoryController> _logger;
 
         public InventoryController(ILogger<InventoryController> logger)
         {
             _logger = logger;
-        }
-
-        /**
-         * 
-         * 
-         1) List the quantity of items per warehouse given a particular model ID
-         2) List the model name and quantity of items given an optional warehouse identifier of a specified part category
-         3) Given a model ID, store ID and optional warehouse ID, reserve an item for a particular store (i.e., take it out of available inventory)
-         4) Request an email notification (given an email address) when an item arrives at a store
-         5) If familiar, also document the API using the OpenAPI 3.0 (Swagger) standard in either JSON or YAML.
-         *
-         *
-         */
+        }      
 
         /// <summary>
         /// Retrieves a specific item by unique id
         /// </summary>
-        /// <remarks>Addtl Remarks</remarks>
-        /// <response code="200">Product created</response>
-        /// <response code="400">Product has missing/invalid values</response>
-        /// <response code="500">Oops! Can't create your product right now</response>
-        [HttpGet("id")]
+        /// <remarks>Retrieves items by ID and uses optional warehouseId param</remarks>
+        /// <response code="200">Product list retrieved</response>
+        /// <response code="400">Product has missing/invalid item id</response>
+        /// <response code="500">Oops! Can't retrieve your product right now</response>
+        [HttpGet("GetbyId")]
         [ProducesResponseType(typeof(Inventory), 200)]
         [ProducesResponseType(typeof(IDictionary<string, string>), 400)]
         [ProducesResponseType(500)]
-        public async Task<ActionResult<Inventory>> GetById(int id)
+        public async Task<ActionResult<Inventory>> GetById(int id, int warehouseId)
         {
-            // Would use FindAsync(id) if we were using a context / db connection.
-            var itemById = Inventory.FirstOrDefault(e => e.ModelId == id);
+            var itemById = Inventory.FirstOrDefault(e => e.ModelId == id && e.WarehouseId == warehouseId);
             if (itemById == null)
             {
                 return NotFound();
             }
             return itemById;
+
         }
 
         /// <summary>
@@ -89,23 +108,27 @@ namespace InventoryApi.Controllers
         /// <response code="200">Item list completed.</response>
         /// <response code="400">Item has missing/invalid values.</response>
         /// <response code="500">Cannot get items right now.</response>
-        [HttpGet("partCategory")]
+        [HttpGet("partByCategory/{partCat}")]
         [ProducesResponseType(typeof(Inventory), 200)]
         [ProducesResponseType(typeof(IDictionary<string, string>), 400)]
         [ProducesResponseType(500)]
-        public async Task<List<Inventory>> GetModelNameAndQtyByPartCat(int partCat)
+        public async Task<List<Inventory>> GetModelNameAndQtyByPartCat(int partCat, int? WarehouseId)
         {
-            var itemsBypartCat = (from n in Inventory.Where(e => e.PartCat == partCat)
+
+            var itemsBypartCat = (from n in Inventory.Where(e => e.PartCat == partCat &&
+                                 (WarehouseId == null || WarehouseId == e.WarehouseId))
                                   select new Inventory()
                                   {
                                       ModelName = n.ModelName,
                                       On_Hand = n.On_Hand
                                   }).ToList();
+
             if (itemsBypartCat == null)
             {
                 throw new Exception("Not Found");
             }
             return itemsBypartCat;
+
         }
 
         /// <summary>
@@ -119,62 +142,79 @@ namespace InventoryApi.Controllers
         [ProducesResponseType(typeof(Inventory), 200)]
         [ProducesResponseType(typeof(IDictionary<string, string>), 400)]
         [ProducesResponseType(500)]
-        public async Task<ActionResult<Inventory>> updateQty(int modelID, int storeID, int warehouseID)
+        public async Task<ActionResult<Inventory>> updateQty(int modelID, int? storeID, int? warehouseID)
         {
 
-            var itemUpdt = Inventory.FirstOrDefault(e => e.ModelId == modelID && e.StoreId == storeID && e.WarehouseId == warehouseID);
+            var itemUpdt = Inventory.FirstOrDefault(e => e.ModelId == modelID && (storeID == null || e.StoreId == storeID)
+            && (warehouseID == null || warehouseID == e.WarehouseId));
 
             if (itemUpdt == null)
             {
                 throw new Exception("Not Found");
             }
-
-            // If on hand is not already 0 then decrement by 1. 
-            if (itemUpdt.On_Hand >= 1)
+            else
             {
-                //Decrement on hand qty and check if reorder threshold has been hit.
-                itemUpdt.On_Hand = itemUpdt.On_Hand - 1;
-                if (itemUpdt.On_Hand <= itemUpdt.Rdr_Lvl)
+                // If on hand is not already 0 then decrement by 1. 
+                if (itemUpdt.On_Hand >= 1)
                 {
-                    itemUpdt.IsReorder = true;
+                    //Decrement on hand qty and check if reorder threshold has been hit.
+                    itemUpdt.On_Hand = itemUpdt.On_Hand - 1;
+                    if (itemUpdt.On_Hand <= itemUpdt.Rdr_Lvl)
+                    {
+                        itemUpdt.IsReorder = true;
+                    }
+                }
+                if (itemUpdt.On_Hand == 0)
+                {
+                    return NotFound("Quantity on hand is currently 0. Please order more of " + itemUpdt.Nomenclature + ", and try again.");
                 }
             }
-
             return itemUpdt;
         }
 
         /// <summary>
         /// Requests Email
         /// </summary>
-        /// <remarks>Email to be sent regarding</remarks>
+        /// <remarks>Email to be sent including itemId</remarks>
         /// <response code="200">Item ordered.</response>
-        /// <response code="400">Item has missing/invalid values.</response>
-        /// <response code="500">Sorry, Cannot order this item right now.</response>
+        /// <response code="400">email is required.</response>
+        /// <response code="500">Sorry Cannot send email right now.</response>
         [HttpPut("sendEmail")]
         [ProducesResponseType(typeof(Inventory), 200)]
         [ProducesResponseType(typeof(IDictionary<string, string>), 400)]
         [ProducesResponseType(500)]
-        public async Task<ActionResult<Inventory>> sendEmail(string email, string action, int storeID, int modelId)
+        public ActionResult sendEmail(string? userId, string UserEmail,int modelID)
         {
-            //Not going to create an actual interface for mail delivery here only the accompanying
-            //controller that would instantiate an object of that interface.
-
-            var itemUpdt = Inventory.FirstOrDefault(e => e.ModelId == modelId && e.StoreId == storeID);
-
-            if (itemUpdt == null)
+            try
             {
-                throw new Exception("Not Found");
+                var senderEmail = new MailAddress("CompanyEmail@gmail.com", "CompanyEmail");
+                var receiverEmail = new MailAddress(UserEmail, "Receiver");
+                var password = "pwd123";
+                var sub = "Confirmation of Item Order";
+                var body = "Message Body here. You bought " + modelID + ", it will arrive soon";  //omitted for time reasons.
+                var smtp = new SmtpClient
+                {
+                    Host = "smtp.gmail.com",  // or whatever smtp server / host is used.
+                    Port = 587,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(senderEmail.Address, password)
+                };
+                using (var mess = new MailMessage(senderEmail, receiverEmail)
+                {
+                    Subject = "Confirmation of Item Order",
+                    Body = body
+                })
+                {
+                    return Ok(mess);  // smtp.Send(mess); replace this with actual smtp credentials.
+                }
             }
-
-            //Increment on hand qty and check if reorder threshold has been hit.
-            itemUpdt.On_Hand = itemUpdt.On_Hand + 1;
-            if (itemUpdt.On_Hand >= itemUpdt.Rdr_Lvl)
+            catch (SmtpFailedRecipientsException ex)
             {
-                itemUpdt.IsReorder = false;
+                var text = "error message: " + ex.ToString();
+                return BadRequest(text);
             }
-
-            return itemUpdt;
-
         }
     }
 }

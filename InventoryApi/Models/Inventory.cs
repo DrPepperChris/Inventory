@@ -12,19 +12,18 @@ namespace InventoryApi
 
     public class Inventory
     {
-        /// <summary>
-        /// The model id of individual item
-        /// </summary>
-        /// <example>UUID of item in warehouse</example>
-        [Required]
-        [Key]
-        public int ModelId { get; set; }
-        [Required]
+        // Items are stored here, used to refill local stores
         public int WarehouseId { get; set; }
 
+        //Store that users pull parts from
         public int StoreId { get; set; }
+        
+        [Required]
+        [Key]
+        //Item ID KEY value
+        public int ModelId { get; set; }
 
-        //NMN
+        //NMN - description of item
         public string Nomenclature { get; set; }
 
         //Part category
@@ -35,9 +34,9 @@ namespace InventoryApi
 
         //Model is a specific kind of part (Manufacturer/ Model Number)
         public string ModelName { get; set; }
-
+        // Value of qty needed to trigger reorder
         public int Rdr_Lvl { get; set; }
-
+        // On hand 
         public int On_Hand { get; set; }
 
     }

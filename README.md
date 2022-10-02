@@ -39,11 +39,11 @@ Interviewer came back with following feedback after initial commit:
 
     
 
-1) List qty by warehouseId. We cannot have an optinal dbKey "WarehousId" Kept the same structure. ![Alt text](C:\UpdateOHQty.png?raw=true "Title")
+1) List qty by warehouseId. We cannot have an optinal dbKey "WarehousId" Kept the same structure. ![UpdQty](C:/UpdateOHQty.png?raw=true "Title")
 
-2) List Item Model by cat w/optinal warehosueId. ![Alt text](C:\Inventory_PartByCategory.png?raw=true "Title")
+2) List Item Model by cat w/optinal warehosueId. ![PartCat](C:/Inventory_PartByCategory.png?raw=true "Title")
 
-3) Adds error handeling to existing method. ![Alt text](C:\Upd_error.png?raw=true "Title")
+3) Adds error handeling to existing method. ![UpdError](C:/Upd_error.png?raw=true "Title")
 
 4) Revamped email notification method. **For this to actually function you need to update it with your SMTP credentials**
 
